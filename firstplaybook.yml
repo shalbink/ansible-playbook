@@ -1,0 +1,14 @@
+---
+- name: first play book
+  hosts: all
+  tasks: 
+    - name: install package
+      yum: 
+         name: httpd
+         state: present
+
+    - name: start and enable service
+      service: 
+         name: httpd
+         state: started
+         enabled: yes
